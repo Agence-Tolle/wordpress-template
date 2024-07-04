@@ -15,3 +15,8 @@ if (window.location.search.includes('test_a11y')) {
  * @see {@link https://webpack.js.org/api/hot-module-replacement/}
  */
 import.meta.webpackHot?.accept(console.error); // eslint-disable-line no-console
+
+// import './_accordions.js';
+import './_bodyLoad.js';
+// import './_insight.js';
+import './_navigation.js';

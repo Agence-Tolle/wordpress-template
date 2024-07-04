@@ -1,3 +1,19 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* LAYOUT */
+@import "./layout/_general.css";
+
+/* TYPO */
+@import "./fonts/_fontfaces.css";
+@import "./fonts/_typography.css";
+
+/* ANIMATIONS */
+/* @import "./animations/_accordions.css"; */
+/* @import "./animations/_insight.css"; */
+/* @import "./animations/_keyframes.css"; */
+
+/* COMPONENTS */
+/* @import "./components/_button.css"; */
+/* @import "./components/_forms.css"; */
