@@ -1,1 +1,39 @@
-/* Editor styles */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.is-desktop-preview {
+  @apply font-body text-16;
+
+  /* LAYOUT */
+  section {
+    @apply relative;
+  }
+  .padd {
+      padding: 50px 0;
+  }
+  .wrap {
+      padding: 0 50px;
+  }
+
+  section.bg-white + section.bg-white .padd {
+    @apply pt-0;
+  }
+}
+
+/* CACHER LES BLOCS "NON-TOLLE" DE WORDPRESS */
+/* .block-editor-inserter__block-list {
+  & > div {
+      & > div {
+          @apply hidden;
+
+          &:nth-child(1), &:nth-child(2) {
+              @apply inline-flex;
+          }
+      }
+  }
+}
+
+.block-editor-inserter__tips {
+  @apply hidden;
+} */
