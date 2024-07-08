@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 import Alpine from 'alpinejs';
 import testA11y from './utils/test-a11y.js';
 

@@ -3,25 +3,28 @@
 @import "tailwindcss/utilities";
 
 .is-desktop-preview {
-  @apply font-body text-16;
+    @apply font-body text-16;
 
-  /* LAYOUT */
-  section {
-    @apply relative;
-  }
-  .padd {
-      padding: 50px 0;
-  }
-  .wrap {
-      padding: 0 50px;
-  }
+    /* LAYOUT */
+    section {
+        @apply relative;
+    }
 
-  section.bg-white + section.bg-white .padd {
-    @apply pt-0;
-  }
+    .padd {
+        padding: 50px 0;
+    }
+
+    .wrap {
+        padding: 0 50px;
+    }
+
+    section.bg-white + section.bg-white .padd {
+        @apply pt-0;
+    }
 }
 
 /* CACHER LES BLOCS "NON-TOLLE" DE WORDPRESS */
+
 /* .block-editor-inserter__block-list {
   & > div {
       & > div {

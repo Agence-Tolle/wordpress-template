@@ -30,12 +30,12 @@
         {
           "name": "Black",
           "slug": "black",
-          "color": "#000"
+          "color": "#000000"
         },
         {
           "name": "White",
           "slug": "white",
-          "color": "#fff"
+          "color": "#ffffff"
         },
         {
           "name": "Slate 50",
@@ -315,57 +315,57 @@
         {
           "name": "Red 50",
           "slug": "red-50",
-          "color": "#fef2f2"
+          "color": "#fff4f4"
         },
         {
           "name": "Red 100",
           "slug": "red-100",
-          "color": "#fee2e2"
+          "color": "#ffdada"
         },
         {
           "name": "Red 200",
           "slug": "red-200",
-          "color": "#fecaca"
+          "color": "#ffb6b6"
         },
         {
           "name": "Red 300",
           "slug": "red-300",
-          "color": "#fca5a5"
+          "color": "#fd7575"
         },
         {
           "name": "Red 400",
           "slug": "red-400",
-          "color": "#f87171"
+          "color": "#fb3440"
         },
         {
           "name": "Red 500",
           "slug": "red-500",
-          "color": "#ef4444"
+          "color": "#e4002b"
         },
         {
           "name": "Red 600",
           "slug": "red-600",
-          "color": "#dc2626"
+          "color": "#cc0022"
         },
         {
           "name": "Red 700",
           "slug": "red-700",
-          "color": "#b91c1c"
+          "color": "#ab001c"
         },
         {
           "name": "Red 800",
           "slug": "red-800",
-          "color": "#991b1b"
+          "color": "#870014"
         },
         {
           "name": "Red 900",
           "slug": "red-900",
-          "color": "#7f1d1d"
+          "color": "#66000e"
         },
         {
           "name": "Red 950",
           "slug": "red-950",
-          "color": "#450a0a"
+          "color": "#420008"
         },
         {
           "name": "Orange 50",
@@ -590,57 +590,57 @@
         {
           "name": "Green 50",
           "slug": "green-50",
-          "color": "#f0fdf4"
+          "color": "#f5fffd"
         },
         {
           "name": "Green 100",
           "slug": "green-100",
-          "color": "#dcfce7"
+          "color": "#ebfffb"
         },
         {
           "name": "Green 200",
           "slug": "green-200",
-          "color": "#bbf7d0"
+          "color": "#cffff5"
         },
         {
           "name": "Green 300",
           "slug": "green-300",
-          "color": "#86efac"
+          "color": "#b0ffeb"
         },
         {
           "name": "Green 400",
           "slug": "green-400",
-          "color": "#4ade80"
+          "color": "#73ffd5"
         },
         {
           "name": "Green 500",
           "slug": "green-500",
-          "color": "#22c55e"
+          "color": "#39ffba"
         },
         {
           "name": "Green 600",
           "slug": "green-600",
-          "color": "#16a34a"
+          "color": "#2ee69f"
         },
         {
           "name": "Green 700",
           "slug": "green-700",
-          "color": "#15803d"
+          "color": "#1fbf7a"
         },
         {
           "name": "Green 800",
           "slug": "green-800",
-          "color": "#166534"
+          "color": "#149959"
         },
         {
           "name": "Green 900",
           "slug": "green-900",
-          "color": "#14532d"
+          "color": "#0b733c"
         },
         {
           "name": "Green 950",
           "slug": "green-950",
-          "color": "#052e16"
+          "color": "#044a21"
         },
         {
           "name": "Emerald 50",
@@ -865,57 +865,57 @@
         {
           "name": "Blue 50",
           "slug": "blue-50",
-          "color": "#eff6ff"
+          "color": "#f4f7fd"
         },
         {
           "name": "Blue 100",
           "slug": "blue-100",
-          "color": "#dbeafe"
+          "color": "#e5ecfa"
         },
         {
           "name": "Blue 200",
           "slug": "blue-200",
-          "color": "#bfdbfe"
+          "color": "#c6d4f1"
         },
         {
           "name": "Blue 300",
           "slug": "blue-300",
-          "color": "#93c5fd"
+          "color": "#a9bbe9"
         },
         {
           "name": "Blue 400",
           "slug": "blue-400",
-          "color": "#60a5fa"
+          "color": "#788bdb"
         },
         {
           "name": "Blue 500",
           "slug": "blue-500",
-          "color": "#3b82f6"
+          "color": "#4e5acb"
         },
         {
           "name": "Blue 600",
           "slug": "blue-600",
-          "color": "#2563eb"
+          "color": "#3e48b5"
         },
         {
           "name": "Blue 700",
           "slug": "blue-700",
-          "color": "#1d4ed8"
+          "color": "#2e3697"
         },
         {
           "name": "Blue 800",
           "slug": "blue-800",
-          "color": "#1e40af"
+          "color": "#20267b"
         },
         {
           "name": "Blue 900",
           "slug": "blue-900",
-          "color": "#1e3a8a"
+          "color": "#000f5a"
         },
         {
           "name": "Blue 950",
           "slug": "blue-950",
-          "color": "#172554"
+          "color": "#090a39"
         },
         {
           "name": "Indigo 50",
@@ -1285,9 +1285,89 @@
           "name": "Ui-monospace",
           "slug": "mono",
           "fontFamily": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+        },
+        {
+          "name": "\"DM Serif Display\"",
+          "slug": "display",
+          "fontFamily": "\"DM Serif Display\",ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif"
+        },
+        {
+          "name": "\"Roboto\"",
+          "slug": "body",
+          "fontFamily": "\"Roboto\",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+        },
+        {
+          "name": "\"FontAwesome\"",
+          "slug": "awesome",
+          "fontFamily": "\"FontAwesome\""
         }
       ],
       "fontSizes": [
+        {
+          "name": "12",
+          "slug": "12",
+          "size": "12px"
+        },
+        {
+          "name": "14",
+          "slug": "14",
+          "size": "14px"
+        },
+        {
+          "name": "16",
+          "slug": "16",
+          "size": "16px"
+        },
+        {
+          "name": "18",
+          "slug": "18",
+          "size": "18px"
+        },
+        {
+          "name": "20",
+          "slug": "20",
+          "size": "20px"
+        },
+        {
+          "name": "24",
+          "slug": "24",
+          "size": "24px"
+        },
+        {
+          "name": "28",
+          "slug": "28",
+          "size": "28px"
+        },
+        {
+          "name": "30",
+          "slug": "30",
+          "size": "30px"
+        },
+        {
+          "name": "36",
+          "slug": "36",
+          "size": "36px"
+        },
+        {
+          "name": "48",
+          "slug": "48",
+          "size": "48px"
+        },
+        {
+          "name": "60",
+          "slug": "60",
+          "size": "60px"
+        },
+        {
+          "name": "74",
+          "slug": "74",
+          "size": "74px"
+        },
+        {
+          "name": "78",
+          "slug": "78",
+          "size": "78px"
+        },
         {
           "name": "xs",
           "slug": "xs",
