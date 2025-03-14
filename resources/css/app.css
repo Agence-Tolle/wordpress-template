@@ -14,6 +14,9 @@
 @import "./fonts/_fontfaces.css";
 @import "./fonts/_typography.css";
 
+/* COMPONENTS */
+@import "./components/_buttons.css";
+
 /* ANIMATIONS */
 @import "./animations/_insight.css";
 @import "./animations/_keyframes.css";
