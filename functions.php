@@ -101,3 +101,21 @@ function acf_populate_gf_forms_ids($field)
 }
 
 add_filter('acf/load_field/name=gravity_form_id', 'acf_populate_gf_forms_ids');
+
+function custom_image_sizes() {
+    add_image_size('mobile', 768, 0, false);
+    add_image_size('tablet', 1500, 0, false);
+    add_image_size('desktop', 1920, 0, false);
+    add_image_size('bigscreen', 2500, 0, false);
+}
+add_action('after_setup_theme', 'custom_image_sizes');
+
+function custom_sizes_in_admin($sizes) {
+    return array_merge($sizes, [
+        'mobile' => __('Mobile (768px)'),
+        'tablet' => __('Tablet (1500px)'),
+        'desktop' => __('Desktop (1920px)'),
+        'bigscreen' => __('Bigscreen (2500px)')
+    ]);
+}
+add_filter('image_size_names_choose', 'custom_sizes_in_admin');

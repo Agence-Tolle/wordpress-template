@@ -7,12 +7,22 @@
 @php
     extract(get_fields());
 
-    if (! empty($image)) {
+    $bgColor = $section_options['bgColor'];
+    $reverse = $section_options['reverse'];
+
+    if (!empty($image)) {
+        $image_id = $image['id'];
+
         $image = wp_get_attachment_image(
-            $image['id'],
+            $image_id,
             'full',
             false,
-            array('class' => 'w-full insight ghost delay--2', 'loading' => 'lazy')
+            [
+                'class' => 'w-full insight ghost delay--2',
+                'loading' => 'lazy',
+                'srcset' => wp_get_attachment_image_srcset($image_id),
+                'sizes'  => '(max-width: 768px) 100vw, (max-width: 1500px) 1500px, 2500px'
+            ]
         );
     }
 @endphp
@@ -20,14 +30,14 @@
 <section 
     @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif
     data-{{ $block['id'] }} 
-    class="bg-{{ $section_options['bgColor'] }} block-{{ $block['classes'] }}"
+    class="{{ $bgColor == 'white' ? 'bg-white text-red-700' : 'bg-gray-100 text-blue-900' }} block-{{ $block['classes'] }}"
 >
     <div class="container">
         <div class="padd">
             <div class="wrap">
-                <div class="flex flex-col-reverse {{ $section_options['reverse'] == true ? 'md:flex-row-reverse' : 'md:flex-row' }} gap-14">
+                <div class="flex flex-col-reverse {{ $reverse == true ? 'md:flex-row-reverse' : 'md:flex-row' }} gap-14">
                     @if (! empty($title) || ! empty($text))
-                        <div class="w-full md:w-1/2">
+                        <div class="w-full {{ ! empty($image) ? 'md:w-1/2' : '' }}">
                             <div class="sticky top-16">
                                 {{-- TITLE --}}
                                 @if (! empty($title))
@@ -51,7 +61,7 @@
 
                     {{-- IMAGE --}}
                     @if (! empty($image))
-                        <div class="w-full md:w-1/2">
+                        <div class="w-full {{ ! empty($title) || ! empty($text) ? 'md:w-1/2' : '' }}">
                             <div class="sticky top-16">
                                 {!! $image !!}
                             </div>

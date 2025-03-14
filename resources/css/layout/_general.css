@@ -34,8 +34,8 @@ section {
 }
 
 /* PADDING Y */
-.padd {
-    @apply py-10 md:py-14 lg:py-20 xl:py-24;
+body .padd {
+    @apply py-16 md:py-20 lg:py-24 xl:py-36;
 
     &--small {
         @apply py-7 md:py-8 lg:py-10;
@@ -68,6 +68,10 @@ body .wrap {
 }
 
 section.bg-white + section.bg-white .padd {
+    @apply pt-0;
+}
+
+section.bg-gray-100 + section.bg-gray-100 .padd {
     @apply pt-0;
 }
 
