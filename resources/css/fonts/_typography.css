@@ -1,6 +1,6 @@
 /* stylelint-disable no-descending-specificity */
 body {
-  @apply font-body text-16 md:text-18;
+  @apply font-body text-16;
 
   h1, .h1,
   h2, .h2,
