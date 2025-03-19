@@ -41,7 +41,7 @@
                             <div class="sticky top-16">
                                 {{-- TITLE --}}
                                 @if (! empty($title))
-                                    <h2 class="font-semibold insight ghost delay--2">
+                                    <h2 class="font-semibold leading-tight insight ghost delay--2">
                                         {{ $title }}
                                     </h2>
                                 @endif

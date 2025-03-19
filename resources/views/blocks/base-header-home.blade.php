@@ -35,7 +35,7 @@
                     <div class="w-full">
                         {{-- TITLE --}}
                         @if (! empty($title))
-                            <h1 class="font-semibold !text-white insight ghost delay--2">
+                            <h1 class="font-semibold !text-white leading-tight insight ghost delay--2">
                                 {{ $title }}
                             </h1>
                         @endif

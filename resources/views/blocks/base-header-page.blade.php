@@ -26,7 +26,7 @@
 <section 
     @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif 
     data-{{ $block['id'] }} 
-    class="relative bg-white block-{{ $block['classes'] }} overflow-hidden"
+    class="relative block-{{ $block['classes'] }} overflow-hidden"
 >
     <div class="container relative z-30">
         <div class="padd">
@@ -35,7 +35,7 @@
                     <div class="w-full">
                         {{-- TITLE --}}
                         @if (! empty($title))
-                            <h1 class="font-semibold !text-white insight ghost delay--2">
+                            <h1 class="font-semibold !text-white leading-tight insight ghost delay--2">
                                 {{ $title }}
                             </h1>
                         @endif
