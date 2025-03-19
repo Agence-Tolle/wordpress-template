@@ -26,7 +26,7 @@
 <header 
     @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif 
     data-{{ $block['id'] }} 
-    class="relative bg-white block-{{ $block['classes'] }} overflow-hidden"
+    class="relative block-{{ $block['classes'] }} overflow-hidden"
 >
     <div class="container relative z-30">
         <div class="padd">
