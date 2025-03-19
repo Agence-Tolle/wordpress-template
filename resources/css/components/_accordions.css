@@ -5,7 +5,7 @@
     .accordion-header {
         @apply relative flex justify-between py-7 pr-[60px] cursor-pointer;
 
-        p {
+        button {
             @apply text-blue-900 text-18 md:text-20 font-medium duration-300;
         }
 
@@ -22,13 +22,13 @@
         }
 
         &:hover {
-            p {
+            button {
                 @apply text-blue-400;
             }
         }
 
         &.active {
-            p {
+            button {
                 @apply text-blue-400;
             }
 

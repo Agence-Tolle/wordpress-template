@@ -23,7 +23,7 @@
     }
 @endphp
 
-<section 
+<header 
     @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif 
     data-{{ $block['id'] }} 
     class="relative bg-white block-{{ $block['classes'] }} overflow-hidden"
@@ -42,9 +42,9 @@
                         
                         {{-- TEXT --}}
                         @if (! empty($text))
-                            <div class="text-white insight ghost delay--2">
-                                {!! $text !!}
-                            </div>
+                            <p class="text-white insight ghost delay--2">
+                                {{ $text }}
+                            </p>
                         @endif
                         
                         {{-- BUTTONS --}}
@@ -59,4 +59,4 @@
         <div class="absolute inset-0 bg-black opacity-40 z-20"></div>
         {!! $image !!}
     @endif
-</section>
+</header>

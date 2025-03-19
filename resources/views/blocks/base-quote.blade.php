@@ -8,27 +8,32 @@
     extract(get_fields());
 @endphp
 
-<section @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif data-{{ $block['id'] }} class="bg-white block-{{ $block['classes'] }}">
+<section 
+    @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif 
+    data-{{ $block['id'] }} 
+    class="bg-white block-{{ $block['classes'] }}"
+>
     <div class="container">
         <div class="padd">
             <div class="wrap">
-                {{-- TEXT --}}
-                @if (! empty($text))
-                    <h4 class="h5 font-semibold leading-normal border-l-2 border-gray-500 py-4 pl-6 insight ghost delay--2">
-                        {{ $text }}
-                    </h4>
+                {{-- QUOTE --}}
+                @if (!empty($text))
+                    <blockquote class="border-l-2 border-gray-500 py-4 pl-6 insight ghost delay--2">
+                        <p class="h5 font-semibold leading-normal">
+                            {{ $text }}
+                        </p>
+                    </blockquote>
                 @endif
 
-                @if (! empty($author))
-                    <p class="font-semibold pl-6 insight ghost delay--2">
-                        {{ $author }}
-                        
-                        @if (! empty($position))
-                            <span class="font-normal">
-                                {{ $position }}
-                            </span>
+                {{-- AUTHOR --}}
+                @if (!empty($author))
+                    <figcaption class="font-semibold pl-6 insight ghost delay--2">
+                        <cite>{{ $author }}</cite>
+
+                        @if (!empty($position))
+                            <span class="font-normal">, {{ $position }}</span>
                         @endif
-                    </p>
+                    </figcaption>
                 @endif
             </div>
         </div>

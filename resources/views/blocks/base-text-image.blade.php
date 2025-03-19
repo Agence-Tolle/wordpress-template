@@ -15,7 +15,7 @@
 
         $image = wp_get_attachment_image(
             $image_id,
-            'full',
+            'large',
             false,
             [
                 'class' => 'w-full insight ghost delay--2',

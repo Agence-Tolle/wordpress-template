@@ -15,9 +15,9 @@
 @import "./fonts/_typography.css";
 
 /* COMPONENTS */
+@import "./components/_accordions.css";
 @import "./components/_buttons.css";
 
 /* ANIMATIONS */
 @import "./animations/_insight.css";
-@import "./animations/_accordions.css";
 @import "./animations/_keyframes.css";

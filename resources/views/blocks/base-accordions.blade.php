@@ -8,39 +8,55 @@
     extract(get_fields());
 @endphp
 
-<section @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif data-{{ $block['id'] }} class="bg-white block-{{ $block['classes'] }}">
+<section 
+    @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif 
+    data-{{ $block['id'] }} 
+    class="bg-white block-{{ $block['classes'] }}"
+>
     <div class="container">
         <div class="padd">
             <div class="wrap">
                 {{-- TITLE --}}
-                @if (! empty($title))
+                @if (!empty($title))
                     <h2 class="font-semibold leading-tight insight ghost delay--2">
                         {{ $title }}
                     </h2>
                 @endif
 
-                @if (! empty($accordions))
-                    @foreach ($accordions as $accordion)
-                        <div class="accordion insight ghost delay--2">
-                            <div class="accordion-header">
-                                <p class="text-lg md:text-xl lg:text-2xl font-semibold text-primary">
-                                    {{ $accordion['title'] }}
-                                </p>
-                                <span class="plusMinus">
-                                    <span></span>
-                                    <span></span>
-                                </span>
-                            </div>
+                {{-- ACCORDIONS --}}
+                @if (!empty($accordions))
+                    <div class="accordion-group">
+                        @foreach ($accordions as $index => $accordion)
+                            @php
+                                $accordionId = 'accordion-' . $block['id'] . '-' . $index;
+                            @endphp
 
-                            <div class="accordion-body">
-                                <div class="pb-8">
-                                    <div class="generic-content">
-                                        {!! $accordion['content'] !!}
+                            <div class="accordion insight ghost delay--2">
+                                {{-- TRIGGER --}}
+                                <button 
+                                    class="accordion-header text-lg md:text-xl lg:text-2xl font-semibold text-primary flex justify-between w-full text-left" 
+                                    aria-expanded="false"
+                                    aria-controls="{{ $accordionId }}"
+                                >
+                                    {{ $accordion['title'] }}
+
+                                    <span class="plusMinus">
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                </button>
+
+                                {{-- CONTENT --}}
+                                <div id="{{ $accordionId }}" class="accordion-body" role="region" aria-labelledby="{{ $accordionId }}-label">
+                                    <div class="pb-8">
+                                        <div class="generic-content">
+                                            {!! $accordion['content'] !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 @endif
             </div>
         </div>
