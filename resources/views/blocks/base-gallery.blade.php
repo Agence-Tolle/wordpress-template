@@ -8,7 +8,7 @@
     extract(get_fields());
 @endphp
 
-<section @if (!empty(block['anchor'])) id="{{ block['anchor'] }}" @endif data-{{ $block['id'] }} class="bg-white block-{{ $block['classes'] }}">
+<section @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif data-{{ $block['id'] }} class="bg-white block-{{ $block['classes'] }}">
     <div class="container">
         <div class="padd">
             <div class="wrap">

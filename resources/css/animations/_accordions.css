@@ -2,7 +2,7 @@
 .accordion {
     @apply border-b border-blue-900/25 last:border-0 duration-500;
 
-    .accordionTrigger {
+    .accordion-header {
         @apply relative flex justify-between py-7 pr-[60px] cursor-pointer;
 
         p {
@@ -44,7 +44,7 @@
         }
     }
 
-    .accordionBody {
+    .accordion-body {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;

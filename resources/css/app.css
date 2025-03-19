@@ -19,4 +19,5 @@
 
 /* ANIMATIONS */
 @import "./animations/_insight.css";
+@import "./animations/_accordions.css";
 @import "./animations/_keyframes.css";
