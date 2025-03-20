@@ -14,27 +14,22 @@
 
         <ol>
             <li>
-                1. Copier et exécuter cette commande dans le terminal:
+                1. Update canIuse: copier et exécuter cette commande dans le terminal:
             </li>
-            <li class="text-sm py-2 leading-[2]">
-                <code class="bg-gray-200 p-2">npm i smoothscroll-for-websites postcss-each -D</code>
-            </li>
-            <li>
-                2. Aussi celle-là</li>
             <li class="text-sm py-2 leading-[2]">
                 <code class="bg-gray-200 p-2">npx update-browserslist-db@latest</code>
             </li>
             <li>
-                3. Change le "Theme Name" dans le fichier style.css.
+                2. Change le "Theme Name" dans le fichier style.css.
             </li>
             <li>
-                4. Le "Text Domain" aussi tant qu'à être là.
+                3. Le "Text Domain" aussi tant qu'à être là.
             </li>
             <li>
-                5. Installer les plugins qui se trouvent dans le dossier <span class="font-semibold">utilities/plugins</span> à la racine du thème.
+                4. Installer les plugins qui se trouvent dans le dossier <span class="font-semibold">utilities/plugins</span> à la racine du thème.
             </li>
             <li>
-                6. Générer les variables dans <span class="font-semibold">resources/css/_theme_variables.css</span>
+                5. Générer les variables dans <span class="font-semibold">resources/css/_theme_variables.css</span>
             </li>
             <li>
                 ... Importer les fichiers qui sont dans <span class="font-semibold">resources/acf-json</span> avec l'outil d'import de ACF.

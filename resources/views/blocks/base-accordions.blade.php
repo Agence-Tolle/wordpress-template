@@ -34,6 +34,7 @@
                             <div class="accordion insight ghost delay--2">
                                 {{-- TRIGGER --}}
                                 <button 
+                                    type="button"
                                     class="accordion-header text-lg md:text-xl lg:text-2xl font-semibold text-primary flex justify-between w-full text-left" 
                                     aria-expanded="false"
                                     aria-controls="{{ $accordionId }}"
