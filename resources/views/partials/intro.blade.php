@@ -1,14 +1,14 @@
-<div class="flex flex-col w-full h-full justify-center items-center bg-gray-50 p-4">
-    <div class="border border-green-300 bg-white rounded-xl p-10 max-w-[750px] shadow-md">
+<div class="fixed top-0 left-0 w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 p-4 z-[420]">
+    <div class="border border-green-400 bg-white rounded-xl p-10 max-w-[750px] shadow-md">
         <h1 class="font-display text-48 md:text-74 font-bold text-[pink]">
             Bravo! 🎉
         </h1>
 
-        <p class="text-xl text-green-300 mb-6">
+        <p class="text-xl text-green-400">
             Ton installation locale est réussie! <span class="">(woop! woop!)</span>
         </p>
 
-        <p class="text-lg text-gray-400">
+        <p class="text-lg text-gray-600 !m-0">
             Voici ce qu'il te reste à faire:
         </p>
 
@@ -32,10 +32,10 @@
                 5. Générer les variables dans <span class="font-semibold">resources/css/_theme_variables.css</span>
             </li>
             <li>
-                ... Importer les fichiers qui sont dans <span class="font-semibold">resources/acf-json</span> avec l'outil d'import de ACF.
+                6. Importer les fichiers qui sont dans <span class="font-semibold">resources/acf-json</span> avec l'outil d'import de ACF.
             </li>
             <li>
-                ... Retirer la ligne 9 de <span class="font-semibold">index.blade.php</span> (cette intro!)
+                7. Retirer la ligne 9 de <span class="font-semibold">index.blade.php</span> (cette intro!)
             </li>
         </ul>
 

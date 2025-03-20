@@ -1,5 +1,5 @@
 <header id="main-nav">
-  {{-- <a class="brand" href="{{ home_url('/') }}">
+  {{-- <a class="brand" href="<?php echo(function_exists('pll_home_url') ? pll_home_url() : home_url()); ?>">
     {!! $siteName !!}
   </a>
 
