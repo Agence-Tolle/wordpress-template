@@ -94,6 +94,6 @@
     --breakpoint-md: 48rem;    /* 768px */
     --breakpoint-lg: 64rem;    /* 1024px */
     --breakpoint-xl: 80rem;    /* 1280px */
-    --breakpoint-2xl: 100rem;  /* 1600px */
+    --breakpoint-2xl: 97.5rem; /* 1560px */
     --breakpoint-3xl: 120rem;  /* 1920px */
 }
