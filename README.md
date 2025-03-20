@@ -1,4 +1,4 @@
-Configuration à la création:
+# Configuration lors de la création:
 
 **PHP** 8.2.28
 
