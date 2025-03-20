@@ -1,5 +1,9 @@
-# Configuration lors de la création:
+# WordPress Template Theme
 
-**PHP** 8.2.28
+## Configuration
 
-**NODE** 22.14.0
+### PHP
+- Version: **8.2.28**
+
+### Node.js
+- Version: **22.14.0**
