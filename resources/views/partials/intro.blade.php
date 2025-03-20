@@ -4,7 +4,7 @@
             Bravo! 🎉
         </h1>
 
-        <p class="text-xl text-green-400">
+        <p class="text-xl font-semibold text-green-400">
             Ton installation locale est réussie! <span class="">(woop! woop!)</span>
         </p>
 
