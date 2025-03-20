@@ -1,3 +1,7 @@
+html :where(.wp-block) {
+    max-width: 1300px !important;
+}
+
 .block-editor-inserter__all-blocks {
     & > div {
         @apply hidden;
