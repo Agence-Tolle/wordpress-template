@@ -4,19 +4,13 @@
             {{-- LEGAL --}}
             <div class="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-1.5 py-6 insight ghost">
                 <div class="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 sm:gap-12">
-                <a 
-                    href="<?= get_privacy_policy_url() ?>" 
+                <a
+                    href="<?= get_privacy_policy_url() ?>"
                     title="<?= __('Privacy policy','tolle') ?>"
                     class="text-14 text-gray-400 font-medium text-center sm:text-left hover:text-white duration-300"
                 >
                     <?= __('Privacy policy','tolle') ?>
                 </a>
-
-                @if (! empty($rbq))
-                    <span class="text-14 text-gray-400 font-medium">
-                    <?= __('RBQ license:','tolle') ?> {{ $rbq }}
-                    </span>
-                @endif
                 </div>
 
                 <a
@@ -28,7 +22,7 @@
                 <span class="text-14 text-gray-400 mr-2 sm:group-hover:opacity-75 sm:opacity-0 duration-500 sm:group-hover:translate-x-0 sm:translate-x-[10%] origin-right">
                     <?= __('Website by','tolle') ?>
                 </span>
-            
+
                 @include('svg.tolle')
                 </a>
             </div>

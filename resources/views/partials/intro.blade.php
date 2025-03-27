@@ -23,20 +23,20 @@
                 2. Change le "Theme Name" dans le fichier style.css.
             </li>
             <li>
-                3. Le "Text Domain" aussi tant qu'à être là.
+                3. Installer les plugins qui se trouvent dans le dossier <span class="font-semibold">utilities/plugins</span> à la racine du thème.
             </li>
             <li>
-                4. Installer les plugins qui se trouvent dans le dossier <span class="font-semibold">utilities/plugins</span> à la racine du thème.
+                4. Générer les variables dans <span class="font-semibold">resources/css/_theme_variables.css</span>
             </li>
             <li>
-                5. Générer les variables dans <span class="font-semibold">resources/css/_theme_variables.css</span>
+                5. Importer les fichiers qui sont dans <span class="font-semibold">resources/acf-json</span> avec l'outil d'import de ACF.
             </li>
             <li>
-                6. Importer les fichiers qui sont dans <span class="font-semibold">resources/acf-json</span> avec l'outil d'import de ACF.
+                6. Modifier le code utm dans le footer.
             </li>
             <li>
-                7. Retirer la ligne 9 de <span class="font-semibold">index.blade.php</span> (cette intro!)
-            </li>
+              7. Retirer la ligne 9 de <span class="font-semibold">index.blade.php</span> (cette intro!)
+          </li>
         </ul>
 
         <h2 class="font-display text-48 text-[pink] mt-10">
