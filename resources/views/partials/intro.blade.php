@@ -35,8 +35,8 @@
                 6. Modifier le code utm dans le footer.
             </li>
             <li>
-              7. Retirer la ligne 9 de <span class="font-semibold">index.blade.php</span> (cette intro!)
-          </li>
+                7. Retirer la ligne 9 de <span class="font-semibold">index.blade.php</span> (cette intro!)
+            </li>
         </ul>
 
         <h2 class="font-display text-48 text-[pink] mt-10">
