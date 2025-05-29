@@ -8,9 +8,9 @@
     extract(get_fields());
 @endphp
 
-<section 
-    @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif 
-    data-{{ $block['id'] }} 
+<section
+    @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif
+    data-{{ $block['id'] }}
     class="bg-white block-{{ $block['classes'] }}"
 >
     <div class="container">
@@ -29,9 +29,9 @@
 
                             <div class="accordion insight ghost delay--2">
                                 {{-- TRIGGER --}}
-                                <button 
+                                <button
                                     type="button"
-                                    class="accordion-header text-lg md:text-xl lg:text-2xl font-semibold text-primary flex justify-between w-full text-left" 
+                                    class="accordion-header text-lg md:text-xl lg:text-2xl font-semibold text-primary flex justify-between w-full text-left"
                                     aria-expanded="false"
                                     aria-controls="{{ $accordionId }}"
                                 >
@@ -59,3 +59,27 @@
         </div>
     </div>
 </section>
+
+{{-- @if (!empty($accordions))
+    @php
+        $faqSchema = [];
+        foreach ($accordions as $index => $accordion) {
+            $faqSchema[] = [
+                '@type' => 'Question',
+                'name' => trim($accordion['title']),
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => trim(strip_tags($accordion['content']))
+                ]
+            ];
+        }
+    @endphp
+
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => $faqSchema
+        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+@endif --}}
