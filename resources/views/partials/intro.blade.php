@@ -29,7 +29,7 @@
                 4. Générer les variables dans <span class="font-semibold">resources/css/_theme_variables.css</span>
             </li>
             <li>
-                5. Importer les fichiers qui sont dans <span class="font-semibold">resources/acf-json</span> avec l'outil d'import de ACF.
+                5. Synchroniser les blocs <span class="font-semibold">ACF</span>.
             </li>
             <li>
                 6. Modifier le code <span class="font-semibold">utm</span> dans le footer (référence vers Tollé).
