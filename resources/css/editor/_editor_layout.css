@@ -3,6 +3,10 @@ html :where(.wp-block) {
 }
 
 .block-editor-inserter__all-blocks {
+    @apply hidden;
+}
+
+.block-editor-inserter__insertable-blocks-at-selection {
     & > div {
         @apply hidden;
 

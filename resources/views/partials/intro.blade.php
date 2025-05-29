@@ -14,13 +14,13 @@
 
         <ol>
             <li>
-                1. Update canIuse: copier et exécuter cette commande dans le terminal:
+                1. Update <span class="font-semibold">canIuse</span>: copier et exécuter cette commande dans le terminal:
             </li>
             <li class="text-sm py-2 leading-[2]">
                 <code class="bg-gray-200 p-2">npx update-browserslist-db@latest</code>
             </li>
             <li>
-                2. Change le "Theme Name" dans le fichier style.css.
+                2. Change le "Theme Name" dans le fichier <span class="font-semibold">style.css</span> par le nom du projet.
             </li>
             <li>
                 3. Installer les plugins qui se trouvent dans le dossier <span class="font-semibold">utilities/plugins</span> à la racine du thème.
@@ -32,7 +32,7 @@
                 5. Importer les fichiers qui sont dans <span class="font-semibold">resources/acf-json</span> avec l'outil d'import de ACF.
             </li>
             <li>
-                6. Modifier le code utm dans le footer.
+                6. Modifier le code <span class="font-semibold">utm</span> dans le footer (référence vers Tollé).
             </li>
             <li>
                 7. Retirer la ligne 9 de <span class="font-semibold">index.blade.php</span> (cette intro!)

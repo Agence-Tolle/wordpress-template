@@ -40,11 +40,7 @@
                         <div class="w-full {{ ! empty($image) ? 'md:w-1/2' : '' }}">
                             <div class="sticky top-16">
                                 {{-- TITLE --}}
-                                @if (! empty($title))
-                                    <h2 class="font-semibold leading-tight insight ghost delay--2">
-                                        {{ $title }}
-                                    </h2>
-                                @endif
+                                @include('components.title')
 
                                 {{-- TEXT --}}
                                 @if (! empty($text))

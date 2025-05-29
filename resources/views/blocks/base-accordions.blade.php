@@ -17,11 +17,7 @@
         <div class="padd">
             <div class="wrap">
                 {{-- TITLE --}}
-                @if (!empty($title))
-                    <h2 class="font-semibold leading-tight insight ghost delay--2">
-                        {{ $title }}
-                    </h2>
-                @endif
+                @include('components.title')
 
                 {{-- ACCORDIONS --}}
                 @if (!empty($accordions))

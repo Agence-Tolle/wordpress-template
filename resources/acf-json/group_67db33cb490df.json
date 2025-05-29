@@ -3,11 +3,11 @@
     "title": "Accordéons",
     "fields": [
         {
-            "key": "field_67db33cbe82fd",
+            "key": "field_68387ae4388b5",
             "label": "Titre",
-            "name": "title",
+            "name": "titleClone",
             "aria-label": "",
-            "type": "text",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,12 +16,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "clone": [
+                "group_68386f9a37bf9"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_67db3476e5c5e",
@@ -110,5 +111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742419118
+    "modified": 1748531976
 }

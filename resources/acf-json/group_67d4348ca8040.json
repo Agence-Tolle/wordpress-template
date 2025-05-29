@@ -1,6 +1,6 @@
 {
     "key": "group_67d4348ca8040",
-    "title": "Groupe de boutons",
+    "title": "Composant de boutons",
     "fields": [
         {
             "key": "field_67d4348c10e73",
@@ -146,5 +146,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741961131
+    "modified": 1748529146
 }

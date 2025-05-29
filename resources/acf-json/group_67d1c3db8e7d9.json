@@ -3,11 +3,11 @@
     "title": "Texte et image",
     "fields": [
         {
-            "key": "field_67d1c3db0d33c",
+            "key": "field_6838730ab5311",
             "label": "Titre",
-            "name": "title",
+            "name": "titleClone",
             "aria-label": "",
-            "type": "text",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,12 +16,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "clone": [
+                "group_68386f9a37bf9"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_67d4338372d39",
@@ -177,5 +178,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741963519
+    "modified": 1748531895
 }
