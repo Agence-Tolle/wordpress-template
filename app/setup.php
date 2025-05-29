@@ -230,3 +230,19 @@ add_action('init', function () {
         $wp_admin_bar->remove_menu('comments');
     });
 });
+
+add_action('after_setup_theme', function () {
+    add_image_size('mobile', 768, 0, false);
+    add_image_size('tablet', 1500, 0, false);
+    add_image_size('desktop', 1920, 0, false);
+    add_image_size('bigscreen', 2500, 0, false);
+});
+
+add_filter('image_size_names_choose', function ($sizes) {
+    return array_merge($sizes, [
+        'mobile' => __('Mobile (768px)'),
+        'tablet' => __('Tablet (1500px)'),
+        'desktop' => __('Desktop (1920px)'),
+        'bigscreen' => __('Bigscreen (2500px)')
+    ]);
+});

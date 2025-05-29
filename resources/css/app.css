@@ -17,6 +17,7 @@
 /* COMPONENTS */
 @import "./components/_accordions.css";
 @import "./components/_buttons.css";
+@import "./components/_splide.css";
 
 /* ANIMATIONS */
 @import "./animations/_insight.css";

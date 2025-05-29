@@ -28,8 +28,9 @@ html :where(.wp-block) {
     @apply hidden;
 }
 
-.editor-block-list-item-acf-base-buttons {
-    @apply relative !pointer-events-none opacity-30;
+.editor-block-list-item-acf-base-buttons,
+.editor-block-list-item-acf-base-title {
+    @apply relative !pointer-events-none opacity-20;
 
     &::after {
         @apply content-[''] absolute inset-0 z-20;

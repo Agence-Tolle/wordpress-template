@@ -11,4 +11,5 @@
 
 /* EDITOR SPECIFICS */
 @import "./editor/_editor_layout.css";
+@import "./editor/_editor_splide.css";
 @import "./editor/_editor_typography.css";
