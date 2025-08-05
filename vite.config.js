@@ -13,19 +13,12 @@ export default defineConfig({
         'resources/js/app.js',
         'resources/css/editor.css',
         'resources/js/editor.js',
+        'resources/css/login.css',
       ],
       refresh: true,
     }),
 
     wordpressPlugin(),
-
-    // Generate the theme.json file in the public/build/assets directory
-    // based on the Tailwind config and the theme.json file from base theme folder
-    // wordpressThemeJson({
-    //   disableTailwindColors: false,
-    //   disableTailwindFonts: false,
-    //   disableTailwindFontSizes: false,
-    // }),
   ],
   resolve: {
     alias: {

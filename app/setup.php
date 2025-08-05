@@ -48,6 +48,30 @@ add_filter('admin_head', function () {
     ])->toHtml();
 });
 
+function vite_login_asset($entry) {
+    $manifest_path = get_theme_file_path('public/build/manifest.json');
+
+    if (!file_exists($manifest_path)) {
+        return null;
+    }
+
+    $manifest = json_decode(file_get_contents($manifest_path), true);
+
+    if (!isset($manifest[$entry]) || !isset($manifest[$entry]['file'])) {
+        return null;
+    }
+
+    return get_theme_file_uri('public/build/' . $manifest[$entry]['file']);
+}
+
+add_action('login_enqueue_scripts', function () {
+    $login_css = vite_login_asset('resources/css/login.css');
+
+    if ($login_css) {
+        wp_enqueue_style('sage/login.css', $login_css, [], null);
+    }
+});
+
 /**
  * Add Vite's HMR client to the block editor.
  *
