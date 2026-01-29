@@ -6,6 +6,8 @@
     @php(do_action('get_header'))
     @php(wp_head())
 
+    <meta name="format-detection" content="telephone=no">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 

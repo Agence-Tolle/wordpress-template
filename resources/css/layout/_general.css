@@ -37,7 +37,7 @@ section {
 body .padd {
     @apply py-16 md:py-20 lg:py-24 xl:py-36;
 
-    &--small {
+    &.--small {
         @apply py-7 md:py-8 lg:py-10;
     }
 
@@ -45,11 +45,11 @@ body .padd {
         @apply pt-0;
     }
 
-    &--top {
+    &.--top {
         @apply pb-0;
     }
 
-    &--bottom {
+    &.--bottom {
         @apply pt-0;
     }
 }
@@ -58,11 +58,11 @@ body .padd {
 body .wrap {
     @apply !px-4 md:!px-8 xl:!px-10 2xl:!px-4;
 
-    &--left {
+    &.--left {
         @apply !pr-0;
     }
 
-    &--right {
+    &.--right {
         @apply !pl-0;
     }
 }
