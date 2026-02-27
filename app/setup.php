@@ -260,6 +260,9 @@ add_action('after_setup_theme', function () {
     add_image_size('tablet', 1500, 0, false);
     add_image_size('desktop', 1920, 0, false);
     add_image_size('bigscreen', 2500, 0, false);
+    add_image_size('content-mobile-1024', 1024, 0, false);
+    add_image_size('content-desktop-1200', 1200, 0, false);
+    add_image_size('content-desktop-2x', 2400, 0, false);
 });
 
 add_filter('image_size_names_choose', function ($sizes) {
@@ -267,6 +270,36 @@ add_filter('image_size_names_choose', function ($sizes) {
         'mobile' => __('Mobile (768px)'),
         'tablet' => __('Tablet (1500px)'),
         'desktop' => __('Desktop (1920px)'),
-        'bigscreen' => __('Bigscreen (2500px)')
+        'bigscreen' => __('Bigscreen (2500px)'),
+        'content-mobile-1024' => __('Content Mobile (1024px)'),
+        'content-desktop-1200' => __('Content Desktop (1200px)'),
+        'content-desktop-2x' => __('Content Desktop Retina (2400px)'),
     ]);
 });
+
+add_filter('sage/blocks/base-buttons/register-data', function ($data) {
+    $data['supports']['inserter'] = false;
+    return $data;
+});
+
+add_filter('sage/blocks/base-title/register-data', function ($data) {
+    $data['supports']['inserter'] = false;
+    return $data;
+});
+
+function acf_populate_gf_forms_ids($field)
+{
+    if (class_exists('GFFormsModel')) {
+        $choices = [];
+
+        foreach (\GFFormsModel::get_forms() as $form) {
+            $choices[$form->id] = $form->title;
+        }
+
+        $field['choices'] = $choices;
+    }
+
+    return $field;
+}
+
+add_filter('acf/load_field/name=gravity_form_id', 'acf_populate_gf_forms_ids');
