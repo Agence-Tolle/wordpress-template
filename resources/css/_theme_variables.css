@@ -18,6 +18,21 @@
     --text-14: 14px;
     --text-12: 12px;
     --text-11: 11px;
+
+    /* LINE-HEIGHT */
+    --text-74--line-height: 110px;
+    --text-72--line-height: 98px;
+    --text-60--line-height: 84px;
+    --text-48--line-height: 72px;
+    --text-36--line-height: 58px;
+    --text-30--line-height: 46px;
+    --text-24--line-height: 32px;
+    --text-20--line-height: 34px;
+    --text-18--line-height: 30px;
+    --text-16--line-height: 28px;
+    --text-14--line-height: 28px;
+    --text-12--line-height: 20px;
+    --text-11--line-height: 16px;
 }
 
 /* COLORS */

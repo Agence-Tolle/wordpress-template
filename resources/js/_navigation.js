@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 const body = document.querySelector('body');
 const burger = document.querySelector('.burger');
 const navigation = document.querySelector('header#main-nav');

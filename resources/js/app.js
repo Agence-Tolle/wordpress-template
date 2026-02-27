@@ -6,5 +6,4 @@ import.meta.glob([
 import './_accordions.js';
 import './_insight.js';
 import './_navigation.js';
-import './_smoothscroll.js';
 import './_splide.js';

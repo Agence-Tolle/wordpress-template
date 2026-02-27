@@ -1,4 +1,3 @@
-/* stylelint-disable no-descending-specificity */
 body {
   @apply font-body text-16 leading-8 text-gray-700;
 
@@ -70,13 +69,13 @@ li:not(header li) {
 section {
   ul {
     @apply list-none mb-7;
-  
+
     li {
       @apply relative inline-block w-full py-1 pl-5 leading-8;
-  
+
       &::before {
         top: 1.1rem;
-  
+
         @apply content-[''] absolute left-0 block h-1.5 w-1.5 rounded-full bg-blue-900;
       }
     }
