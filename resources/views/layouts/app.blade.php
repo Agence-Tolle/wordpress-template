@@ -15,7 +15,7 @@
     @php(wp_body_open())
 
     <div id="app">
-      <a class="sr-only focus:not-sr-only" href="#main">
+      <a class="sr-only focus:not-sr-only" href="#main" title="{{ __('Skip to content', 'sage') }}" target="_self">
         {{ __('Skip to content', 'sage') }}
       </a>
 

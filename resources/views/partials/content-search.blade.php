@@ -1,7 +1,11 @@
 <article @php(post_class())>
   <header>
     <h2 class="entry-title">
-      <a href="{{ get_permalink() }}">
+      <a
+        href="{{ get_permalink() }}"
+        title="{{ the_title_attribute(['echo' => false]) }}"
+        target="_self"
+      >
         {!! $title !!}
       </a>
     </h2>

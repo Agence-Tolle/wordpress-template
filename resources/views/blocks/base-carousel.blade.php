@@ -18,7 +18,7 @@
             <div class="wrap">
                 {{-- TITLE --}}
                 @include('components.title')
-                
+
                 <div class="splide insight ghost" role="group">
                     <div class="splide__track">
                         <div class="splide__list">
@@ -27,18 +27,19 @@
                                     @php
                                         $slideClasses = 'relative overflow-hidden bg-cover bg-center bg-no-repeat rounded-xl py-10 px-14';
                                     @endphp
-                                    
+
                                     {{-- SI LA SLIDE A UN LIEN --}}
                                     @if (! empty($slide['link']))
                                         <a
                                             href="{{ $slide['link']['url'] }}"
                                             target="{{ $slide['link']['target'] ?: '_self' }}"
+                                            @if ($slide['link']['target'] === '_blank') rel="noopener noreferrer" @endif
                                             title="{{ $slide['link']['title'] ?: $slide['title'] ?: '' }}"
                                             class="splide__slide {{ $slideClasses }}"
                                             style="background-image: url('{{ $slide['image']['url'] }}');"
                                         >
                                     @else
-                                        <div 
+                                        <div
                                             class="splide__slide {{ $slideClasses }}"
                                             style="background-image: url('{{ $slide['image']['url'] }}');"
                                         >

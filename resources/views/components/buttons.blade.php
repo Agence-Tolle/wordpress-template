@@ -6,7 +6,7 @@
 
                 if (!empty($icon)) {
                     $icon_id = $icon['id'];
-            
+
                     $icon = wp_get_attachment_image(
                         $icon_id,
                         'full',
@@ -24,12 +24,15 @@
                 href="{{ $button['link']['url'] ?? '' }}"
                 target="{{ $button['link']['target'] ?? '_self' }}"
                 title="{{ $button['link']['title'] ?? '' }}"
+                @if ($button['link']['target'] ?? '_self' === '_blank')
+                    rel="noopener noreferrer"
+                @endif
                 class="group btn {{ $button['variant'] ? '--' . $button['variant'] : '' }}"
             >
                 @if (! empty($button['icon']) && $button['icon_position'] == 'before')
                     {!! $icon !!}
                 @endif
-        
+
                 @if (! empty($button['link']['title']))
                     <span class="txt">
                         {{ $button['link']['title'] }}
