@@ -14,9 +14,8 @@
                     </a>
                 </div>
 
-                {{-- @TODO: Modifier l'URL du utm_source --}}
                 <a
-                    href="https://www.agencetolle.com/?utm_source=git-portes-et-fenetres&utm_medium=web&utm_campaign=client"
+                    href="<?= esc_url('https://www.agencetolle.com/?utm_source=' . rawurlencode(get_bloginfo('name')) . '&utm_medium=web&utm_campaign=client') ?>"
                     target="_blank"
                     title="<?= __('Tollé Web Agency - Application and website development','tolle') ?>"
                     rel="noopener noreferrer"

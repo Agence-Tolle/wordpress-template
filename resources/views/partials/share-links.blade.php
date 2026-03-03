@@ -4,6 +4,7 @@
         target="_blank"
         title="<?= __('Share on Facebook', 'tolle') ?>"
         rel="noopener noreferrer"
+        aria-label="<?= __('Share on Facebook', 'tolle') ?>"
         class="group inline-block relative w-10 h-10 rounded-full border bg-black hover:bg-white border-black duration-300"
     >
         @include('svg.share-facebook')
@@ -14,16 +15,18 @@
         target="_blank"
         title="<?= __('Share on LinkedIn', 'tolle') ?>"
         rel="noopener noreferrer"
+        aria-label="<?= __('Share on LinkedIn', 'tolle') ?>"
         class="group inline-block relative w-10 h-10 rounded-full border bg-black hover:bg-white border-black duration-300"
     >
         @include('svg.share-linkedin')
     </a>
 
     <a
-        href="mailto:?subject=<?= __('I want to share this article with you', 'tolle') ?>&amp;body=<?= __('Look at this website:', 'tolle') ?> {{ urlencode(get_permalink()) }}"
+        href="<?= esc_url('mailto:?subject=' . urlencode(__('I want to share this article with you', 'tolle')) . '&body=' . urlencode(__('Look at this website:', 'tolle') . ' ' . get_permalink())) ?>"
         target="_blank"
         title="<?= __('Share by email', 'tolle') ?>"
         rel="noopener noreferrer"
+        aria-label="<?= __('Share by email', 'tolle') ?>"
         class="group inline-block relative w-10 h-10 rounded-full border bg-black hover:bg-white border-black duration-300"
     >
         @include('svg.share-email')

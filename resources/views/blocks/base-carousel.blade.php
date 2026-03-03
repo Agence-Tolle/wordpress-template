@@ -19,40 +19,50 @@
                 {{-- TITLE --}}
                 @include('components.title')
 
-                <div class="splide insight ghost" role="group">
+                <div class="splide insight ghost" role="group" aria-roledescription="carousel" aria-label="{{ $title ?? __('Carousel', 'tolle') }}">
                     <div class="splide__track">
                         <div class="splide__list">
                             @if ( !empty($slides) )
                                 @foreach ( $slides as $slide )
                                     @php
                                         $slideClasses = 'relative overflow-hidden bg-cover bg-center bg-no-repeat rounded-xl py-10 px-14';
+                                        $link = is_array($slide['link'] ?? null) ? $slide['link'] : [];
+                                        $url = $link['url'] ?? '';
+                                        $target = $link['target'] ?? '_self';
+                                        $linkTitle = $link['title'] ?? '';
+                                        $hasLink = !empty($url);
+                                        $image = is_array($slide['image'] ?? null) ? $slide['image'] : [];
+                                        $imageUrl = $image['url'] ?? '';
+                                        $slideTitle = $slide['title'] ?? '';
+                                        $slideText = $slide['text'] ?? '';
+                                        $cardTitle = $linkTitle ?: $slideTitle;
                                     @endphp
 
                                     {{-- SI LA SLIDE A UN LIEN --}}
-                                    @if ( !empty($slide['link']) )
+                                    @if ( $hasLink )
                                         <a
-                                            href="{{ $slide['link']['url'] }}"
-                                            target="{{ $slide['link']['target'] ?: '_self' }}"
-                                            @if ($slide['link']['target'] === '_blank') rel="noopener noreferrer" @endif
-                                            title="{{ $slide['link']['title'] ?: $slide['title'] ?: '' }}"
+                                            href="{{ $url }}"
+                                            target="{{ $target }}"
+                                            @if ( $target === '_blank' ) rel="noopener noreferrer" @endif
+                                            title="{{ $cardTitle }}"
                                             class="splide__slide {{ $slideClasses }}"
-                                            style="background-image: url('{{ $slide['image']['url'] }}');"
+                                            @if ( !empty($imageUrl) ) style="background-image: url('{{ $imageUrl }}');" @endif
                                         >
                                     @else
                                         <div
                                             class="splide__slide {{ $slideClasses }}"
-                                            style="background-image: url('{{ $slide['image']['url'] }}');"
+                                            @if ( !empty($imageUrl) ) style="background-image: url('{{ $imageUrl }}');" @endif
                                         >
                                     @endif
                                         <div class="absolute inset-0 bg-gradient-to-b from-white/70 to-white/40 z-10"></div>
 
                                         <div class="relative z-20">
                                             <h3 class="h3">
-                                                {{ $slide['title'] ?? '' }}
+                                                {{ $slideTitle }}
                                             </h3>
-                                            {{ $slide['text'] ?? '' }}
+                                            {{ $slideText }}
                                         </div>
-                                    @if ( !empty($slide['link']) )
+                                    @if ( $hasLink )
                                         </a>
                                     @else
                                         </div>
