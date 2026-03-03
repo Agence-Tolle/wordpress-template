@@ -9,8 +9,8 @@
 @endphp
 
 <section
-    @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif
-    data-{{ $block['id'] }}
+    @if ( !empty($block['anchor']) ) id="{{ $block['anchor'] }}" @endif
+    @if ( !empty($block['id']) ) data-block-id="{{ $block['id'] }}" @endif
     class="bg-white block-{{ $block['classes'] }}"
 >
     <div class="container">
@@ -20,9 +20,9 @@
                 @include('components.title')
 
                 {{-- ACCORDIONS --}}
-                @if (!empty($accordions))
+                @if ( !empty($accordions) )
                     <div class="accordion-group">
-                        @foreach ($accordions as $index => $accordion)
+                        @foreach ( $accordions as $index => $accordion )
                             @php
                                 $accordionId = 'accordion-' . $block['id'] . '-' . $index;
                             @endphp
@@ -60,7 +60,7 @@
     </div>
 </section>
 
-{{-- @if (!empty($accordions))
+{{-- @if ( !empty($accordions) )
     @php
         $faqSchema = [];
         foreach ($accordions as $index => $accordion) {

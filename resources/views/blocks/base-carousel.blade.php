@@ -9,8 +9,8 @@
 @endphp
 
 <section
-    @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif
-    data-{{ $block['id'] }}
+    @if ( !empty($block['anchor']) ) id="{{ $block['anchor'] }}" @endif
+    @if ( !empty($block['id']) ) data-block-id="{{ $block['id'] }}" @endif
     class="bg-white block-{{ $block['classes'] }}"
 >
     <div class="container">
@@ -22,14 +22,14 @@
                 <div class="splide insight ghost" role="group">
                     <div class="splide__track">
                         <div class="splide__list">
-                            @if (! empty($slides))
-                                @foreach ($slides as $slide)
+                            @if ( !empty($slides) )
+                                @foreach ( $slides as $slide )
                                     @php
                                         $slideClasses = 'relative overflow-hidden bg-cover bg-center bg-no-repeat rounded-xl py-10 px-14';
                                     @endphp
 
                                     {{-- SI LA SLIDE A UN LIEN --}}
-                                    @if (! empty($slide['link']))
+                                    @if ( !empty($slide['link']) )
                                         <a
                                             href="{{ $slide['link']['url'] }}"
                                             target="{{ $slide['link']['target'] ?: '_self' }}"
@@ -52,7 +52,7 @@
                                             </h3>
                                             {{ $slide['text'] ?? '' }}
                                         </div>
-                                    @if (! empty($slide['link']))
+                                    @if ( !empty($slide['link']) )
                                         </a>
                                     @else
                                         </div>

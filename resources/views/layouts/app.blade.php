@@ -15,8 +15,8 @@
     @php(wp_body_open())
 
     <div id="app">
-      <a class="sr-only focus:not-sr-only" href="#main" title="{{ __('Skip to content', 'sage') }}" target="_self">
-        {{ __('Skip to content', 'sage') }}
+      <a class="sr-only focus:not-sr-only" href="#main" title="{{ __('Skip to content', 'tolle') }}" target="_self">
+        {{ __('Skip to content', 'tolle') }}
       </a>
 
       @include('sections.header')

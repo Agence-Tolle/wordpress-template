@@ -1,11 +1,22 @@
-@if (! empty($buttonsClone['buttons']))
-    <div class="btn-wrapper insight ghost {{ $extraClasses ?? '' }}">
-        @foreach ($buttonsClone['buttons'] as $button)
-            @php
-                $icon = $button['icon'] ?? '';
+@php
+    $buttons = $buttonsClone['buttons'] ?? [];
+@endphp
 
-                if (!empty($icon)) {
-                    $icon_id = $icon['id'];
+@if ( !empty($buttons) )
+    <div class="btn-wrapper insight ghost {{ $extraClasses ?? '' }}">
+        @foreach ( $buttons as $button )
+            @php
+                $link = is_array($button['link'] ?? null) ? $button['link'] : [];
+                $url = $link['url'] ?? '';
+                $target = $link['target'] ?? '_self';
+                $title = $link['title'] ?? '';
+                $variant = $button['variant'] ?? '';
+                $iconPosition = $button['icon_position'] ?? '';
+                $iconField = $button['icon'] ?? null;
+                $icon = '';
+
+                if (!empty($iconField['id'])) {
+                    $icon_id = (int) $iconField['id'];
 
                     $icon = wp_get_attachment_image(
                         $icon_id,
@@ -21,25 +32,25 @@
             @endphp
 
             <a
-                href="{{ $button['link']['url'] ?? '' }}"
-                target="{{ $button['link']['target'] ?? '_self' }}"
-                title="{{ $button['link']['title'] ?? '' }}"
-                @if ($button['link']['target'] ?? '_self' === '_blank')
+                href="{{ $url }}"
+                target="{{ $target }}"
+                title="{{ $title }}"
+                @if ( $target === '_blank' )
                     rel="noopener noreferrer"
                 @endif
-                class="group btn {{ $button['variant'] ? '--' . $button['variant'] : '' }}"
+                class="group btn {{ $variant ? '--' . $variant : '' }}"
             >
-                @if (! empty($button['icon']) && $button['icon_position'] == 'before')
+                @if ( !empty($icon) && $iconPosition === 'before' )
                     {!! $icon !!}
                 @endif
 
-                @if (! empty($button['link']['title']))
+                @if ( !empty($title) )
                     <span class="txt">
-                        {{ $button['link']['title'] }}
+                        {{ $title }}
                     </span>
                 @endif
 
-                @if (! empty($button['icon']) && $button['icon_position'] == 'after')
+                @if ( !empty($icon) && $iconPosition === 'after' )
                     {!! $icon !!}
                 @endif
             </a>

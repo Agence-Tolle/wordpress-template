@@ -27,23 +27,24 @@
     }
 @endphp
 
-<section 
-    @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif
-    data-{{ $block['id'] }} 
+<section
+    @if ( !empty($block['anchor']) ) id="{{ $block['anchor'] }}" @endif
+    @if ( !empty($block['id']) ) data-block-id="{{ $block['id'] }}" @endif
+
     class="{{ $bgColor == 'white' ? 'bg-white text-red-700' : 'bg-gray-100 text-blue-900' }} block-{{ $block['classes'] }}"
 >
     <div class="container">
         <div class="padd">
             <div class="wrap">
                 <div class="flex flex-col-reverse {{ $reverse == true ? 'md:flex-row-reverse' : 'md:flex-row' }} gap-14">
-                    @if (! empty($title) || ! empty($text))
+                    @if ( !empty($title) || ! empty($text) )
                         <div class="w-full {{ ! empty($image) ? 'md:w-1/2' : '' }}">
                             <div class="sticky top-16">
                                 {{-- TITLE --}}
                                 @include('components.title')
 
                                 {{-- TEXT --}}
-                                @if (! empty($text))
+                                @if ( !empty($text) )
                                     <div class="insight ghost delay--2">
                                         {!! $text !!}
                                     </div>
@@ -56,7 +57,7 @@
                     @endif
 
                     {{-- IMAGE --}}
-                    @if (! empty($image))
+                    @if ( !empty($image) )
                         <div class="w-full {{ ! empty($title) || ! empty($text) ? 'md:w-1/2' : '' }}">
                             <div class="sticky top-16">
                                 {!! $image !!}

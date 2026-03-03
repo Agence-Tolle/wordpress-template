@@ -1,6 +1,6 @@
 <div class="flex items-center gap-2">
     <a
-        href="http://www.facebook.com/sharer/sharer.php?u={{ urlencode(get_permalink()) }}"
+        href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(get_permalink()) }}"
         target="_blank"
         title="<?= __('Share on Facebook', 'tolle') ?>"
         rel="noopener noreferrer"

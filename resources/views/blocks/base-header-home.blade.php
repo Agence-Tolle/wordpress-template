@@ -23,9 +23,9 @@
     }
 @endphp
 
-<header 
-    @if (!empty($block['anchor'])) id="{{ $block['anchor'] }}" @endif 
-    data-{{ $block['id'] }} 
+<header
+    @if ( !empty($block['anchor']) ) id="{{ $block['anchor'] }}" @endif
+    @if ( !empty($block['id']) ) data-block-id="{{ $block['id'] }}" @endif
     class="relative block-{{ $block['classes'] }} overflow-hidden"
 >
     <div class="container relative z-30">
@@ -34,19 +34,19 @@
                 <div class="flex flex-col items-center py-24">
                     <div class="w-full">
                         {{-- TITLE --}}
-                        @if (! empty($title))
+                        @if ( !empty($title) )
                             <h1 class="font-semibold !text-white leading-tight insight ghost delay--2">
                                 {{ $title }}
                             </h1>
                         @endif
-                        
+
                         {{-- TEXT --}}
-                        @if (! empty($text))
+                        @if ( !empty($text) )
                             <p class="text-white insight ghost delay--2">
                                 {{ $text }}
                             </p>
                         @endif
-                        
+
                         {{-- BUTTONS --}}
                         @include('components.buttons')
                     </div>
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    @if (!empty($image))
+    @if ( !empty($image) )
         <div class="absolute inset-0 bg-black opacity-40 z-20"></div>
         {!! $image !!}
     @endif
