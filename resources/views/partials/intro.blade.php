@@ -1,11 +1,11 @@
 <div class="fixed top-0 left-0 w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-gray-50 p-4 z-[420]">
     <div class="border border-green-400 bg-white rounded-xl py-4 px-7 max-w-[750px] shadow-md">
         <h1 class="font-display text-48 md:text-74 font-bold text-[pink] !mb-4">
-            Bravo! 🎉
+            Woop woop! 🎉
         </h1>
 
         <p class="text-xl font-semibold text-green-400">
-            Ton installation locale est réussie! <span class="">(woop! woop!)</span>
+            Ton installation locale est réussie!
         </p>
 
         <p class="text-lg text-gray-600 !m-0">
@@ -20,7 +20,7 @@
                 2. <span class="font-semibold">Supprimer</span> les plugins non utilisés.
             </li>
             <li>
-                3. <span class="font-semibold">Installer</span> les plugins qui se trouvent dans le dossier <span class="font-semibold">utilities/plugins</span> à la racine du thème.
+                3. <span class="font-semibold">Installer</span> les plugins utiles dans <span class="font-semibold">ce_theme/utilities/plugins</span>.
             </li>
             <li>
                 4. <span class="font-semibold">Activer les licences</span> ACF + WPML + Gravity Forms et les <span class="font-semibold">mettre à jour</span>.
@@ -51,7 +51,7 @@
             </li>
         </ul>
 
-        <h2 class="font-display text-48 text-[pink] mt-4">
+        <h2 class="font-display text-48 text-[pink] mt-4 !mb-0">
             Bon code!
         </h2>
     </div>
