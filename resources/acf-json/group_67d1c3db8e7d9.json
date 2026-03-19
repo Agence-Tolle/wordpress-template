@@ -5,7 +5,7 @@
         {
             "key": "field_6838730ab5311",
             "label": "Titre",
-            "name": "titleClone",
+            "name": "titleclone",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -48,7 +48,7 @@
         {
             "key": "field_67d436ba139c5",
             "label": "Boutons",
-            "name": "buttonsClone",
+            "name": "buttonsclone",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -178,5 +178,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1748531895
+    "modified": 1773949645
 }

@@ -47,7 +47,7 @@
         {
             "key": "field_67d4af8ee77c8",
             "label": "Boutons",
-            "name": "buttonsClone",
+            "name": "buttonsclone",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -111,5 +111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741996669
+    "modified": 1773949617
 }

@@ -1,5 +1,5 @@
 @php
-    $buttons = $buttonsClone['buttons'] ?? [];
+    $buttons = $buttonsclone['buttons'] ?? [];
 @endphp
 
 @if ( !empty($buttons) )

@@ -1,7 +1,7 @@
-@if ( !empty($titleGroup['title']) )
-    <{{ $titleGroup['tag'] ?? 'h2' }}
-        class="{{ $titleGroup['tag_style'] ?? 'h2' }} insight ghost delay--2"
+@if ( !empty($titlegroup['title']) )
+    <{{ $titlegroup['tag'] ?? 'h2' }}
+        class="{{ $titlegroup['tag_style'] ?? 'h2' }} insight ghost delay--2"
     >
-        {{ $titleGroup['title'] }}
-    </{{ $titleGroup['tag'] ?? 'h2' }} >
+        {{ $titlegroup['title'] }}
+    </{{ $titlegroup['tag'] ?? 'h2' }} >
 @endif
