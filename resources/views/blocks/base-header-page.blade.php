@@ -12,12 +12,11 @@
 
         $image = wp_get_attachment_image(
             $image_id,
-            'full',
+            \App\retina_image_size('layout-full'),
             false,
             [
                 'class' => 'absolute top-0 left-0 bottom-0 w-full h-[100%] object-cover object-center z-10',
-                'srcset' => wp_get_attachment_image_srcset($image_id),
-                'sizes'  => '(max-width: 768px) 100vw, (max-width: 1500px) 1500px, 2500px'
+                'sizes'  => \App\retina_image_sizes('layout-full'),
             ]
         );
     }

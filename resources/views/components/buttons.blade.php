@@ -20,12 +20,12 @@
 
                     $icon = wp_get_attachment_image(
                         $icon_id,
-                        'full',
+                        \App\retina_image_size('icon'),
                         false,
                         [
                             'class' => 'w-[15px] h-[15px]',
                             'loading' => 'lazy',
-                            'srcset' => wp_get_attachment_image_srcset($icon_id),
+                            'sizes' => \App\retina_image_sizes('icon'),
                         ]
                     );
                 }

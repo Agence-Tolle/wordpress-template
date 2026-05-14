@@ -5,3 +5,6 @@
 .budfiles
 npm-debug.log
 yarn-error.log
+CLAUDE.md
+.claude/
+NOTES.md

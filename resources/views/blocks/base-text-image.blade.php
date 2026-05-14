@@ -15,13 +15,12 @@
 
         $image = wp_get_attachment_image(
             $image_id,
-            'large',
+            \App\retina_image_size('layout-half'),
             false,
             [
                 'class' => 'w-full insight ghost delay--2',
                 'loading' => 'lazy',
-                'srcset' => wp_get_attachment_image_srcset($image_id),
-                'sizes'  => '(max-width: 768px) 100vw, (max-width: 1500px) 1500px, 2500px'
+                'sizes'  => \App\retina_image_sizes('layout-half'),
             ]
         );
     }

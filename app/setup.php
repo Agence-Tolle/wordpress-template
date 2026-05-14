@@ -256,27 +256,134 @@ add_action('init', function () {
     });
 });
 
+function retina_image_registry(): array
+{
+    return [
+        'mobile' => ['width' => 768, 'label' => __('Mobile (768px)', 'tolle')],
+        'mobile-2x' => ['width' => 1536, 'label' => __('Mobile Retina (1536px)', 'tolle')],
+        'content' => ['width' => 768, 'label' => __('Content (768px)', 'tolle')],
+        'content-2x' => ['width' => 1536, 'label' => __('Content Retina (1536px)', 'tolle')],
+        'content-mobile-1024' => ['width' => 1024, 'label' => __('Content Mobile (1024px)', 'tolle')],
+        'content-wide' => ['width' => 1200, 'label' => __('Content Wide (1200px)', 'tolle')],
+        'content-wide-2x' => ['width' => 2400, 'label' => __('Content Wide Retina (2400px)', 'tolle')],
+        'content-desktop-1200' => ['width' => 1200, 'label' => __('Content Desktop (1200px)', 'tolle')],
+        'content-desktop-2x' => ['width' => 2400, 'label' => __('Content Desktop Retina (2400px)', 'tolle')],
+        'layout-half' => ['width' => 780, 'label' => __('Layout Half (780px)', 'tolle')],
+        'layout-half-2x' => ['width' => 1560, 'label' => __('Layout Half Retina (1560px)', 'tolle')],
+        'layout-full' => ['width' => 1560, 'label' => __('Layout Full (1560px)', 'tolle')],
+        'layout-full-2x' => ['width' => 3120, 'label' => __('Layout Full Retina (3120px)', 'tolle')],
+        'tablet' => ['width' => 1500, 'label' => __('Tablet (1500px)', 'tolle')],
+        'desktop' => ['width' => 1920, 'label' => __('Desktop (1920px)', 'tolle')],
+        'bigscreen' => ['width' => 2500, 'label' => __('Bigscreen (2500px)', 'tolle')],
+    ];
+}
+
+function retina_image_sizes(string $context = 'content'): string
+{
+    return match ($context) {
+        'layout-full' => '100vw',
+        'layout-half' => '(max-width: 767px) 100vw, (max-width: 1599px) calc((100vw - 5.5rem) / 2), 780px',
+        'content-wide' => '(max-width: 767px) 100vw, (max-width: 1279px) calc(100vw - 2rem), 1200px',
+        'icon' => '15px',
+        default => '(max-width: 767px) 100vw, 768px',
+    };
+}
+
+function retina_image_size(string $context = 'content', bool $retina = true): string
+{
+    return match ($context) {
+        'layout-full' => $retina ? 'layout-full-2x' : 'layout-full',
+        'layout-half' => $retina ? 'layout-half-2x' : 'layout-half',
+        'content-wide' => $retina ? 'content-wide-2x' : 'content-wide',
+        'icon' => 'thumbnail',
+        default => $retina ? 'content-2x' : 'content',
+    };
+}
+
+function retina_image_context_from_size($size): string
+{
+    if (is_array($size)) {
+        $width = (int) ($size[0] ?? 0);
+
+        if ($width > 1200) {
+            return 'layout-full';
+        }
+
+        if ($width > 900) {
+            return 'content-wide';
+        }
+
+        if ($width > 100) {
+            return 'content';
+        }
+
+        return 'icon';
+    }
+
+    return match ($size) {
+        'layout-full',
+        'layout-full-2x',
+        'desktop',
+        'bigscreen' => 'layout-full',
+        'layout-half',
+        'layout-half-2x' => 'layout-half',
+        'content-wide',
+        'content-wide-2x',
+        'content-desktop-1200',
+        'content-desktop-2x',
+        'content-mobile-1024',
+        'tablet' => 'content-wide',
+        'thumbnail',
+        'icon' => 'icon',
+        default => 'content',
+    };
+}
+
 add_action('after_setup_theme', function () {
-    add_image_size('mobile', 768, 0, false);
-    add_image_size('tablet', 1500, 0, false);
-    add_image_size('desktop', 1920, 0, false);
-    add_image_size('bigscreen', 2500, 0, false);
-    add_image_size('content-mobile-1024', 1024, 0, false);
-    add_image_size('content-desktop-1200', 1200, 0, false);
-    add_image_size('content-desktop-2x', 2400, 0, false);
+    foreach (retina_image_registry() as $name => $config) {
+        add_image_size($name, $config['width'], 0, false);
+    }
 });
 
 add_filter('image_size_names_choose', function ($sizes) {
-    return array_merge($sizes, [
-        'mobile' => __('Mobile (768px)'),
-        'tablet' => __('Tablet (1500px)'),
-        'desktop' => __('Desktop (1920px)'),
-        'bigscreen' => __('Bigscreen (2500px)'),
-        'content-mobile-1024' => __('Content Mobile (1024px)'),
-        'content-desktop-1200' => __('Content Desktop (1200px)'),
-        'content-desktop-2x' => __('Content Desktop Retina (2400px)'),
-    ]);
+    $customSizes = [];
+
+    foreach (retina_image_registry() as $name => $config) {
+        $customSizes[$name] = $config['label'];
+    }
+
+    return array_merge($sizes, $customSizes);
 });
+
+add_filter('big_image_size_threshold', function () {
+    return 3840;
+});
+
+add_filter('max_srcset_image_width', function ($maxWidth) {
+    return max((int) $maxWidth, 3840);
+});
+
+add_filter('wp_calculate_image_sizes', function ($sizes, $size, $imageSrc, $imageMeta, $attachmentId) {
+    if (is_admin()) {
+        return $sizes;
+    }
+
+    return retina_image_sizes('content');
+}, 10, 5);
+
+add_filter('wp_get_attachment_image_attributes', function ($attributes, $attachment, $size) {
+    if (is_admin() || ! empty($attributes['sizes'])) {
+        return $attributes;
+    }
+
+    if (get_post_mime_type($attachment) === 'image/svg+xml') {
+        return $attributes;
+    }
+
+    $attributes['sizes'] = retina_image_sizes(retina_image_context_from_size($size));
+
+    return $attributes;
+}, 10, 3);
 
 add_filter('sage/blocks/base-buttons/register-data', function ($data) {
     $data['supports']['inserter'] = false;
