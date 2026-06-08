@@ -1,0 +1,7 @@
+.video-capsule [data-hover-video] {
+    will-change: opacity;
+}
+
+.video-lightbox {
+    backdrop-filter: blur(4px);
+}

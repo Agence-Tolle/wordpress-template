@@ -18,6 +18,7 @@
 @import "./components/_accordions.css";
 @import "./components/_buttons.css";
 @import "./components/_splide.css";
+@import "./components/_video-capsules.css";
 
 /* ANIMATIONS */
 @import "./animations/_insight.css";
