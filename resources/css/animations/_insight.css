@@ -1,67 +1,65 @@
 .insight {
     position: relative;
 
-    @media screen and (min-width: 769px) {
+    &.ghost {
+        opacity: 0;
+        transition: all 0s ease-in-out;
+    }
+
+    &.fade-left {
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 0s ease-in-out;
+    }
+
+    &.fade-right {
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 0s ease-in-out;
+    }
+
+    &.fade-up {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 0s ease-in-out;
+    }
+
+    &.fade-down {
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: all 0s ease-in-out;
+    }
+
+    &.zoom {
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0s ease-in-out;
+    }
+
+    &.alive {
         &.ghost {
-            opacity: 0;
-            transition: all 0s ease-in-out;
+            opacity: 1;
+            transition-duration: 0.5s;
         }
 
-        &.fade-left {
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: all 0s ease-in-out;
-        }
-
-        &.fade-right {
-            opacity: 0;
-            transform: translateX(100px);
-            transition: all 0s ease-in-out;
-        }
-
-        &.fade-up {
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0s ease-in-out;
-        }
-
-        &.fade-down {
-            opacity: 0;
-            transform: translateY(-100px);
-            transition: all 0s ease-in-out;
-        }
-
+        &.fade-right,
+        &.fade-left,
+        &.fade-up,
+        &.fade-down,
         &.zoom {
-            opacity: 0;
-            transform: scale(0);
-            transition: all 0s ease-in-out;
+            opacity: 1;
+            transform: none;
+            transition-duration: 0.5s;
         }
 
-        &.alive {
-            &.ghost {
-                opacity: 1;
-                transition-duration: 0.5s;
-            }
-
-            &.fade-right,
-            &.fade-left,
-            &.fade-up,
-            &.fade-down,
-            &.zoom {
-                opacity: 1;
-                transform: none;
-                transition-duration: 0.5s;
-            }
-
-            &.delay--1 { transition-delay: 0.1s; }
-            &.delay--2 { transition-delay: 0.2s; }
-            &.delay--3 { transition-delay: 0.3s; }
-            &.delay--4 { transition-delay: 0.4s; }
-            &.delay--5 { transition-delay: 0.5s; }
-            &.delay--6 { transition-delay: 0.6s; }
-            &.delay--7 { transition-delay: 0.7s; }
-            &.delay--8 { transition-delay: 0.8s; }
-            &.delay--9 { transition-delay: 0.9s; }
-        }
+        &.delay--1 { transition-delay: 0.1s; }
+        &.delay--2 { transition-delay: 0.2s; }
+        &.delay--3 { transition-delay: 0.3s; }
+        &.delay--4 { transition-delay: 0.4s; }
+        &.delay--5 { transition-delay: 0.5s; }
+        &.delay--6 { transition-delay: 0.6s; }
+        &.delay--7 { transition-delay: 0.7s; }
+        &.delay--8 { transition-delay: 0.8s; }
+        &.delay--9 { transition-delay: 0.9s; }
     }
 }
