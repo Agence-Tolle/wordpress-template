@@ -5,7 +5,7 @@
 --}}
 
 @php
-    extract(get_fields());
+    extract(get_fields() ?: []);
 
     $bgColor = $section_options['bgColor'];
     $reverse = $section_options['reverse'];

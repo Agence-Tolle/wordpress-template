@@ -5,7 +5,7 @@
 --}}
 
 @php
-    extract(get_fields());
+    extract(get_fields() ?: []);
 
     if (!empty($image)) {
         $image_id = $image['id'];

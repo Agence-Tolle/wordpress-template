@@ -5,7 +5,7 @@
 --}}
 
 @php
-    extract(get_fields());
+    extract(get_fields() ?: []);
 @endphp
 
 <section
