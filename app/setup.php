@@ -385,6 +385,22 @@ add_filter('wp_get_attachment_image_attributes', function ($attributes, $attachm
     return $attributes;
 }, 10, 3);
 
+/**
+ * Restreint l'inserteur de blocs aux seuls blocs ACF (Blocs Tollé)
+ * lors de l'édition d'un article ou d'une page.
+ */
+add_filter('allowed_block_types_all', function ($allowed_blocks, $context) {
+    if (empty($context->post)) {
+        return $allowed_blocks;
+    }
+
+    $registered = array_keys(\WP_Block_Type_Registry::get_instance()->get_all_registered());
+
+    return array_values(array_filter($registered, function ($name) {
+        return str_starts_with($name, 'acf/');
+    }));
+}, 10, 2);
+
 add_filter('sage/blocks/base-buttons/register-data', function ($data) {
     $data['supports']['inserter'] = false;
     return $data;
@@ -394,6 +410,65 @@ add_filter('sage/blocks/base-title/register-data', function ($data) {
     $data['supports']['inserter'] = false;
     return $data;
 });
+
+/**
+ * Affiche une capture d'écran comme aperçu d'un bloc ACF dans l'inserteur.
+ * Il suffit de déposer une image "{slug}.png" (ou .jpg) dans
+ * resources/images/block-previews/ — le rendu du bloc est alors remplacé
+ * par cette image dans l'aperçu de l'inserteur, sans toucher au template.
+ */
+function block_preview_image($slug)
+{
+    foreach (['png', 'jpg'] as $extension) {
+        $file = "resources/images/block-previews/{$slug}.{$extension}";
+
+        if (file_exists(get_theme_file_path($file))) {
+            return $file;
+        }
+    }
+
+    return null;
+}
+
+foreach (glob(get_theme_file_path('resources/views/blocks/*.blade.php')) as $block_template) {
+    $block_slug = basename($block_template, '.blade.php');
+
+    add_filter("sage/blocks/{$block_slug}/register-data", function ($data) use ($block_slug) {
+        $preview = block_preview_image($block_slug);
+
+        if (! $preview) {
+            return $data;
+        }
+
+        $data['example'] = [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    '_inserter_preview' => true,
+                ],
+            ],
+        ];
+
+        $render_callback = $data['render_callback'];
+
+        // Court-circuite le rendu du bloc lors de l'aperçu dans l'inserteur
+        // pour afficher la capture d'écran à la place.
+        $data['render_callback'] = function ($block, $content = '', $is_preview = false, $post_id = 0, $wp_block = null, $context = false) use ($render_callback, $preview) {
+            if (! empty($block['data']['_inserter_preview'])) {
+                printf(
+                    '<img src="%s" style="display: block; width: 100%%; height: auto;" alt="">',
+                    esc_url(get_theme_file_uri($preview))
+                );
+
+                return;
+            }
+
+            call_user_func($render_callback, $block, $content, $is_preview, $post_id, $wp_block, $context);
+        };
+
+        return $data;
+    });
+}
 
 function acf_populate_gf_forms_ids($field)
 {
